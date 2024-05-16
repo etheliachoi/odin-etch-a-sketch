@@ -17,8 +17,6 @@ function createGrid(num) {
         sq.addEventListener("mouseover", 
         (e) => {if (blackToggle == true) {
             blackWhite(e.target, counter);
-            counter += 1;
-            if (counter >= 10) counter = 0;
         }
             else if (rgbToggle == true) {
             colorGen(e.target)}
@@ -100,6 +98,9 @@ rgbButton.addEventListener("click", () => {
 
 function blackWhite(elem, counter) {
     elem.style.backgroundColor = blackHexArray[counter];
+    counter += 1;
+    if (counter >= 10) counter = 0;
+    return counter;
 }
 
 
@@ -109,10 +110,5 @@ function colorGen(elem) {
     const b = Math.floor(Math.random() * 256);
     elem.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
 }
-
-const colorPicker = document.createElement("input");
-colorPicker.type = "color";
-colorPicker.value = "#32cdcb";
-paletteButtons.appendChild(colorPicker);
 
 createGrid(10);
