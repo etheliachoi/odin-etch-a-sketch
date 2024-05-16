@@ -19,11 +19,14 @@ function createGrid(num) {
             blackWhite(e.target, counter);
         }
             else if (rgbToggle == true) {
-            colorGen(e.target)}
-        }
-        )  
+            colorGen(e.target);
+        }   
+            else if (colorToggle == true) {
+                e.target.style.backgroundColor = colorPicker.value;
+        } 
     })  
-}
+    }
+)}
 
 const body = document.querySelector("body");
 const buttonContainer = document.createElement("div");
@@ -84,6 +87,7 @@ const blackHexArray = ["#e5e5e5", "#cccccc", "#b2b2b2", "#999999", "#7f7f7f",
 blackWhiteButton.addEventListener("click", () => {
     counter = 0;
     rgbToggle = false;
+    colorToggle = false;
     blackToggle = true;
 })
 
@@ -93,6 +97,7 @@ paletteButtons.appendChild(rgbButton);
 let rgbToggle = false;
 rgbButton.addEventListener("click", () => {
     blackToggle = false;
+    colorToggle = false;
     rgbToggle = true;
 })
 
@@ -110,5 +115,16 @@ function colorGen(elem) {
     const b = Math.floor(Math.random() * 256);
     elem.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
 }
+
+const colorPicker = document.createElement("input");
+colorPicker.type = "color";
+colorPicker.value = "#32cdcb";
+paletteButtons.appendChild(colorPicker);
+let colorToggle = false;
+colorPicker.addEventListener("click", () => {
+    blackToggle = false;
+    rgbToggle = false;
+    colorToggle = true;
+})
 
 createGrid(10);
