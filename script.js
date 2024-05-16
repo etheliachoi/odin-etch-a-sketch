@@ -17,6 +17,8 @@ function createGrid(num) {
         sq.addEventListener("mouseover", 
         (e) => {if (blackToggle == true) {
             changeBlackWhite(e.target, counter);
+            counter += 1;
+            if (counter >= 10) counter = 0;
         }
             else if (rgbToggle == true) {
             changeRandomRGB(e.target);
@@ -103,9 +105,6 @@ rgbButton.addEventListener("click", () => {
 
 function changeBlackWhite(elem, counter) {
     elem.style.backgroundColor = blackHexArray[counter];
-    counter += 1;
-    if (counter >= 10) counter = 0;
-    return counter;
 }
 
 
