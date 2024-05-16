@@ -16,10 +16,10 @@ function createGrid(num) {
     squares.forEach(function(sq) {
         sq.addEventListener("mouseover", 
         (e) => {if (blackToggle == true) {
-            blackWhite(e.target, counter);
+            changeBlackWhite(e.target, counter);
         }
             else if (rgbToggle == true) {
-            colorGen(e.target);
+            changeRandomRGB(e.target);
         }   
             else if (colorToggle == true) {
                 e.target.style.backgroundColor = colorPicker.value;
@@ -101,7 +101,7 @@ rgbButton.addEventListener("click", () => {
     rgbToggle = true;
 })
 
-function blackWhite(elem, counter) {
+function changeBlackWhite(elem, counter) {
     elem.style.backgroundColor = blackHexArray[counter];
     counter += 1;
     if (counter >= 10) counter = 0;
@@ -109,7 +109,7 @@ function blackWhite(elem, counter) {
 }
 
 
-function colorGen(elem) {
+function changeRandomRGB(elem) {
     const r = Math.floor(Math.random() * 256);
     const g = Math.floor(Math.random() * 256);
     const b = Math.floor(Math.random() * 256);
