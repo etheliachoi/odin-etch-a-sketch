@@ -1,0 +1,110 @@
+* {
+    box-sizing: border-box;
+  }
+
+body {
+    background-image: linear-gradient(to bottom, rgb(252, 231, 235), pink, rgb(243, 136, 153), rgb(254, 83, 111));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    color: rgb(62, 62, 62);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* makes sure the div does not go out of screen */
+    /* if we use 100vh, the div will be centered vertically */
+    height: 100%; 
+    /* border: 1px solid black; */
+}
+
+.square {
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    flex-grow: 1;
+}
+
+.black-and-white {
+    background-color: black;
+}
+
+button {
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 0px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.button-container button {
+    color: white;
+    background-color: rgb(255, 48, 162);
+    padding: 10px 25px;
+}
+
+.button-container button:hover {
+    box-shadow: 0 8px 16px 0 rgba(246, 147, 147, 0.9);
+}
+
+.palette {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 30px auto;
+    border: 5px solid;
+    /* max-width: 80vw; */
+    /* height: 120px; */
+    width: 500px;
+    height: 140px;
+    border-radius: 7px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.palette p {
+    font-size: large;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-right: 0;
+}
+
+.palette div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.palette button {
+    padding: 15px 25px;
+    height: 60px;
+}
+
+.palette button:first-child {
+    background-color: black;
+    color: white;
+}
+
+.palette button:nth-child(2) {
+    background-image: linear-gradient(to right, #6cd2f4 0%, #fcd524 50%, #fb3c3c 100%);
+}
+
+.palette button:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.palette input {
+    cursor: pointer;
+}
